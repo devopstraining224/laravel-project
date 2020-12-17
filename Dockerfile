@@ -6,9 +6,11 @@ WORKDIR /app
 
 COPY composer.json .
 
+COPY . .
+
 RUN composer install
 
-COPY . .
+
 
 EXPOSE 8000
 
