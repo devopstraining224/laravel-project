@@ -4,13 +4,9 @@ MAINTAINER yayamombeya090@gmail.com
 
 WORKDIR /app
 
-COPY composer.json .
-
 COPY . .
 
-RUN composer install
-
-
+RUN composer install && php artisan key:generate
 
 EXPOSE 8000
 
