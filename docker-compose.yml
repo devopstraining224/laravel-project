@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  laravel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 3000:8000
+    restart: always
+
+  mysql-db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567890
+    volumes:
+    - ./db:/var/lib/mysql
+
